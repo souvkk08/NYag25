@@ -8,30 +8,19 @@
 body {
     margin: 0;
     min-height: 100vh;
-    /* iOS Viewport Fix */
-    min-height: -webkit-fill-available;
     background: 
         linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
         url('images/gen1.webp') no-repeat center center fixed;
-    /* WebP Fallback */
-    background-image: 
-        linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-        url('images/gen1.webp'),
-        url('images/gen1.jpg');
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
     background-size: cover;
-    background-attachment: fixed;
+    background-position: 50% 50%;
     color: whitesmoke;
     overflow-x: hidden;
-}
 
-/* Safari-Specific Fixes */
-@supports (-webkit-touch-callout: none) {
-    body {
-        min-height: -webkit-fill-available;
-        background-attachment: scroll !important;
+    @media (max-width: 768px) {
+        body {
+            background-size: 100% auto;
+            background-position: center 15%;
+        }
     }
 }
 .logo {
