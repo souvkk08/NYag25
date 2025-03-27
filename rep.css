@@ -7,12 +7,17 @@
 
 body {
     margin: 0;
-    min-height: 100vh;
-    background: 
+    padding: 0;
+    /* min-height: 100vh; */
+    /* background: 
         linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-        url('images/gen1.webp') no-repeat center center fixed;
+        url('images/gen1.webp') no-repeat center center fixed; */
+    background-image: url("images/gen1.webp");
     background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     background-position: center;
+    /* background-position: 50% 50%; */
     color: whitesmoke;
     overflow-x: hidden;
 
@@ -23,6 +28,7 @@ body {
         }
     }
 }
+
 .logo {
     font-size: 1.5rem;
     font-weight: bold;
