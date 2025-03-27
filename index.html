@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yagvik</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <div id="preloader"></div>
+    <video autoplay muted loop id="bg-video">
+        <source src="images/video1.mp4" type="video/mp4">
+        Your browser does not support HTML5 video.
+    </video>
+    <div class="container">
+        <img src="images/clg.png" alt="Corner Image" class="corner-image">
+        <img src="images/bgr.png" alt="Yagvik Logo" class="logo">
+        <h1>TAGLINE</h1>
+        <p>Event starts in:</p>
+        <h2 id="countdown"></h2>
+        <button id="menu-btn">Jump in!</button>
+        
+    </div>
+
+    <div id="popup-menu" class="popup-menu" aria-hidden="true">
+        <div class="popup-content">
+            <span id="close-btn" class="close">&times;</span>
+            <ul>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="team.html">Meet the Team</a></li>
+                <li><a href="rep.html">College Rep</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="update.html">updates</a></li>
+                <li><a href="sponsor.html">Sponsors</a></li>
+            </ul>
+            <a href="events.html" target="_blank" class="register-btn">Registration</a>
+        </div>
+    </div>
+
+    <a href="https://www.instagram.com/tintyagvik/" target="_blank" class="instagram-float">
+        <img src="images/insta.png" alt="Follow us on Instagram">
+    </a>
+    
+    
+    <script src="script.js"></script>
+
+    <script>
+        var loader = document.getElementById("preloader");
+        window.addEventListener("load",function(){
+            loader.style.display = "none";
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,216 @@
+:root {
+    --primary-color: #1a1a1a;
+    --secondary-color: #2d2d2d;
+    --accent-color: #e63946;
+    --text-color: #ffffff;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 4rem 0;
+}
+
+.container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.header h1 {
+    font-size: 2.8rem;
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+}
+
+.sponsor-tier {
+    margin: 4rem 0;
+}
+
+.tier-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--accent-color);
+}
+
+.title-tier .sponsor-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.sponsor-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.sponsor-card {
+    background: var(--secondary-color);
+    border-radius: 12px;
+    padding: 1rem;
+    transition: transform 0.3s ease;
+    text-align: center;
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.title-tier .sponsor-card {
+    padding: 3rem;
+    min-height: 300px;
+}
+
+.sponsor-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.sponsor-logo {
+    max-width: 100%;
+    height: auto;
+    max-height: 70%;
+    object-fit: contain;
+}
+
+.title-tier .sponsor-logo {
+    max-height: 450px;
+}
+
+@media (max-width: 768px) {
+    .sponsor-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+    
+    .tier-title {
+        font-size: 1.6rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .sponsor-card {
+        padding: 1.5rem;
+        min-height: 150px;
+    }
+    
+    .title-tier .sponsor-card {
+        min-height: 250px;
+        padding: 2rem;
+    }
+}
+
+.header {
+    position:absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background: transparent;
+    z-index: 1000;
+}
+
+.logo img {
+    height: 65px;
+    transition: opacity 0.3s ease;
+    margin: 15px 8px 8px 0px;
+}
+
+.logo img:hover {
+    opacity: 0.8;
+}
+
+.menu-btn {
+    background: #ffffff;
+    color: #000;
+    padding: 0.8rem 2rem;
+    border-radius: 30px;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+
+.menu-btn:hover {
+    background: #FFD700;
+    transform: scale(1.05);
+}
+
+.popup-menu {
+    position:fixed;
+    top: 0;
+    right: -300px;
+    width: 300px;
+    height: 100vh;
+    background: black;
+    color: white;
+    padding: 20px;
+    transition: right 0.4s ease-in-out, opacity 0.3s;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 1050;
+}
+
+.popup-menu.active {
+    right: 0;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 28px;
+    color: white;
+    cursor: pointer;
+}
+
+.close-btn:hover {
+    color: #FFD700;
+}
+
+.popup-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 80px 0 0 0;
+    text-align: center;
+}
+
+.popup-menu ul li {
+    padding: 10px 0;
+    font-size: 20px;
+    font-weight: bold;
+    
+}
+
+.popup-menu ul li a {
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s;
+}
+
+.popup-menu ul li a:hover {
+    color: #FFD700;
+}

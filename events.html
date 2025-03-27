@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+    <link rel="stylesheet" href="events.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <a href="index.html">
+                <img src="images/logo.jpeg" alt="Event Logo">
+            </a>
+        </div>
+        <button id="menu-btn" class="menu-btn">Menu</button>
+    </header>
+    <section class="hero">
+        <video class="hero-video" autoplay muted loop>
+            <source src="images/video1.mp4" type="video/mp4">
+        </video>
+        <div class="video-overlay">
+            <div class="hero-content">
+                <h1>Upcoming Events</h1>
+                <p>Discover amazing experiences coming your way</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="events-container">
+
+        <div class="events-grid">
+            <a href="#" class="event-card" data-category="music">
+                <img src="images/blu.jpg" alt="Event" class="event-image">
+                <div class="event-info">
+                    <div class="event-date">March 15, 2024</div>
+                    <h3 class="event-title">Summer Music Festival</h3>
+                    <div class="event-location">Central Park, New York</div>
+                    <div class="event-actions">
+                        <button class="register-btn" data-register-url="https://in.pinterest.com/">
+                        Register Now
+                        </button>
+                    </div>
+                </div>
+            </a>
+
+            <a href="#" class="event-card" data-category="art">
+                <img src="images/music.jpg" alt="Event" class="event-image">
+                <div class="event-info">
+                    <div class="event-date">March 18, 2025</div>
+                    <h3 class="event-title">Modern Art Exhibition</h3>
+                    <div class="event-location">Museum of Modern Art</div>
+                    <div class="event-actions">
+                        <button class="register-btn">Register Now</button>
+                    </div>
+                </div>
+            </a>
+
+            <a href="#" class="event-card" data-category="art">
+                <img src="images/blu.jpg" alt="Event" class="event-image">
+                <div class="event-info">
+                    <div class="event-date">March 18, 2025</div>
+                    <h3 class="event-title">Modern Art Exhibition</h3>
+                    <div class="event-location">Museum of Modern Art</div>
+                    <div class="event-actions">
+                        <button class="register-btn">Register Now</button>
+                    </div>
+                </div>
+            </a>
+
+            <a href="#" class="event-card" data-category="art">
+                <img src="images/music.jpg" alt="Event" class="event-image">
+                <div class="event-info">
+                    <div class="event-date">March 18, 2025</div>
+                    <h3 class="event-title">Modern Art Exhibition</h3>
+                    <div class="event-location">Museum of Modern Art</div>
+                    <div class="event-actions">
+                        <button class="register-btn">Register Now</button>
+                    </div>
+                </div>
+            </a>
+
+            <a href="#" class="event-card" data-category="art">
+                <img src="images/blu.jpg" alt="Event" class="event-image">
+                <div class="event-info">
+                    <div class="event-date">March 18, 2025</div>
+                    <h3 class="event-title">Modern Art Exhibition</h3>
+                    <div class="event-location">Museum of Modern Art</div>
+                    <div class="event-actions">
+                        <button class="register-btn">Register Now</button>
+                    </div>
+                </div>
+            </a>
+
+            <a href="#" class="event-card" data-category="tech">
+                <img src="images/music.jpg" alt="Event" class="event-image">
+                <div class="event-info">
+                    <div class="event-date">March 20, 2025</div>
+                    <h3 class="event-title">Tech Conference</h3>
+                    <div class="event-location">Convention Center</div>
+                    <div class="event-actions">
+                        <button class="register-btn">Register Now</button>
+                    </div>
+                </div>
+            </a>
+
+            <a href="#" class="event-card" data-category="sports">
+                <img src="images/blu.jpg" alt="Event" class="event-image">
+                <div class="event-info">
+                    <div class="event-date">March 25, 2025</div>
+                    <h3 class="event-title">Marathon Championship</h3>
+                    <div class="event-location">City Stadium</div>
+                    <div class="event-actions">
+                        <button class="register-btn">Register Now</button>
+                    </div>
+                </div>
+            </a>
+
+            <a href="#" class="event-card" data-category="Music">
+                <img src="images/music.jpg" alt="Event" class="event-image">
+                <div class="event-info">
+                    <div class="event-date">March 25, 2025</div>
+                    <h3 class="event-title">Marathon Championship</h3>
+                    <div class="event-location">City Stadium</div>
+                    <div class="event-actions">
+                        <button class="register-btn">Register Now</button>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <script>
+        const categoryButtons = document.querySelectorAll('.category-btn');
+        const eventCards = document.querySelectorAll('.event-card');
+
+        categoryButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                categoryButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+                const selectedCategory = button.dataset.category;
+
+                eventCards.forEach(card => {
+                    const cardCategory = card.dataset.category;
+                    card.style.display = (selectedCategory === 'all' || cardCategory === selectedCategory) 
+                        ? 'block' 
+                        : 'none';
+                });
+            });
+        });
+
+        document.querySelectorAll('.register-btn').forEach(button => {
+            button.addEventListener('click', (e) => {
+              e.preventDefault();
+              e.stopPropagation();
+              const url = e.currentTarget.dataset.registerUrl;
+              window.location.href = url;
+            });
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+        const video = document.getElementById('bg-video');
+        if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+        video.playsInline = true;
+        video.setAttribute('playsinline', '');
+        video.muted = true;
+        }
+  
+        video.play().catch(error => {
+        video.style.display = 'none';
+        });
+    });
+    </script>
+    <div id="popup-menu" class="popup-menu">
+        <button id="close-btn" class="close-btn">✖</button> 
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="team.html">Meet the team</a></li>
+            <li><a href="rep.html">College Rep.</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="update.html">Updates</a></li>
+            <li><a href="sponsor.html">Sponsors</a></li>
+        </ul>
+    </div>
+
+    <a href="https://www.instagram.com/tintyagvik/" target="_blank" class="instagram-float">
+        <img src="images/insta.png" alt="Follow us on Instagram">
+    </a>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const menuBtn = document.getElementById("menu-btn");
+            const popupMenu = document.getElementById("popup-menu");
+            const closeBtn = document.getElementById("close-btn");
+
+            menuBtn.addEventListener("click", () => {
+                popupMenu.classList.add("active");
+            });
+
+            closeBtn.addEventListener("click", () => {
+                popupMenu.classList.remove("active");
+            });
+
+            document.addEventListener("click", (event) => {
+                if (!popupMenu.contains(event.target) && !menuBtn.contains(event.target)) {
+                    popupMenu.classList.remove("active");
+                }
+            });
+        });
+    </script>
+</body>
+</html>

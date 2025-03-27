@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us </title>
+    <link rel="stylesheet" href="about.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <a href="index.html">
+                <img src="images/logo.jpeg" alt="Event Logo">
+            </a>
+        </div>
+        <button id="menu-btn" class="menu-btn">Menu</button>
+    </header>
+
+    <main>
+        <section class="about-section">
+            <h1>About Us</h1>
+            <div class="about-info">
+
+            </div>
+        </section>
+    </main>
+    
+    
+
+    <div id="popup-menu" class="popup-menu">
+        <button id="close-btn" class="close-btn">✖</button> 
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="team.html">Meet the Team</a></li>
+            <li><a href="rep.html">College Reps</a></li>
+            <li><a href="sponsor.html">Sponsor</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const menuBtn = document.getElementById("menu-btn");
+            const popupMenu = document.getElementById("popup-menu");
+            const closeBtn = document.getElementById("close-btn");
+
+            menuBtn.addEventListener("click", () => {
+                popupMenu.classList.add("active");
+            });
+
+            closeBtn.addEventListener("click", () => {
+                popupMenu.classList.remove("active");
+            });
+
+            document.addEventListener("click", (event) => {
+                if (!popupMenu.contains(event.target) && !menuBtn.contains(event.target)) {
+                    popupMenu.classList.remove("active");
+                }
+            });
+        });
+    </script>
+</body>
+</html>
