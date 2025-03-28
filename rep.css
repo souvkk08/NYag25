@@ -12,7 +12,7 @@ body {
     background: 
         linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
         url('images/gen1.webp') no-repeat center center fixed;
-    background-image: url("images/gen1.webp");
+    background-image: url("images/gen2.webp");
     background-position: 50% 50%;
     color: whitesmoke;
     overflow-x: hidden;
@@ -20,7 +20,7 @@ body {
     @media (max-width: 768px) {
         body {
             background-size: 100% auto;
-            background-position: center 15%;
+            background-position: center 30%;
         }
     }
 }
